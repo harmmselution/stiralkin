@@ -1,0 +1,17 @@
+
+.textField {
+  color: #000000;
+  background-color: #f0f0f0;
+  border-radius: 20px;
+  padding: 0 18px;
+  height: 50px;
+  font-size: 16px;
+  line-height: 1.33;
+  width: 100%;
+  outline: none;
+
+  &::placeholder {
+    color: #000000;
+    opacity: 0.5;
+  }
+}

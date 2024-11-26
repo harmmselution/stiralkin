@@ -1,0 +1,191 @@
+@use "../../assets/styles/variables";
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding-inline: 20px;
+  background-color: variables.$yellow;
+  height: 68px;
+  width: 100%;
+  box-shadow: none;
+  transform: translateY(-76px);
+  opacity: 0;
+  z-index: 2000;
+  position: fixed;
+  top: 0;
+  transition: transform 0.5s;
+}
+
+.logoContainer {
+}
+
+.showHeader {
+  transform: translateY(0px);
+  opacity: 1;
+}
+
+.logo {
+  max-width: 83px;
+  width: 83px;
+  min-width: 83px;
+  height: auto;
+  display: block;
+}
+
+.link {
+  width: max-content;
+  color: variables.$white;
+  font-weight: 600;
+}
+
+.phone {
+  font-weight: 700;
+  font-size: 22px;
+  color: variables.$white;
+}
+
+
+.contactsWrapper {
+  display: flex;
+  gap: 20px;
+  justify-content: end;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex: 1;
+}
+
+.active {
+  opacity: .7;
+}
+
+.contacts {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.navigation {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.burgerBtn {
+  display: none;
+  position: relative;
+  flex-shrink: 0;
+  width: 28px;
+  height: 20px;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  transform: rotate(0deg);
+  transition: transform .5s ease-in-out;
+  cursor: pointer;
+  z-index: 999;
+}
+
+
+.burgerBtn span {
+  display: block;
+  position: absolute;
+  width: 100%;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: .25s ease-in-out;
+  height: 3px;
+  background-color: #000;
+}
+
+.burgerBtn span:nth-child(1) {
+  top: 0;
+}
+
+.burgerBtn span:nth-child(2) {
+  top: 8px;
+}
+
+.burgerBtn span:nth-child(3) {
+  top: 8px;
+}
+
+.burgerBtn span:nth-child(4) {
+  top: 16px;
+}
+
+
+.burgerOpened span:nth-child(1) {
+  top: 8px;
+  width: 0;
+  left: 50%;
+}
+
+.burgerOpened span:nth-child(2) {
+  transform: rotate(45deg);
+}
+
+.burgerOpened span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+.burgerOpened span:nth-child(4) {
+  top: 8px;
+  width: 0%;
+  left: 50%;
+}
+
+@media screen and (max-width: 1200px) {
+  .contactsWrapper {
+    gap: 15px;
+  }
+  .menu {
+    gap: 15px;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .header {
+    height: 123px;
+  }
+  .navigation {
+    display: none;
+  }
+  .burgerBtn {
+    display: block;
+  }
+
+  .header:has(.burgerOpened) .navigation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    opacity: 1;
+    gap: 40px;
+    top: 123px;
+    left: 0;
+    width: 100%;
+    background: variables.$yellow;
+  }
+  .header:has(.burgerOpened) .menu {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+  }
+  .header:has(.burgerOpened) .contactsWrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+  }
+}

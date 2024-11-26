@@ -1,0 +1,130 @@
+@use "../../assets/styles/variables";
+
+.repairsWrapper {
+  display: flex;
+  padding-inline: 20px;
+  justify-content: center;
+  width: 100%;
+  gap: 40px;
+  padding-top: 90px;
+  padding-bottom: 90px;
+  background-color: variables.$blue;
+}
+
+.repairCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 260px;
+  width: 100%;
+
+  & > .img {
+    width: 260px;
+    height: 300px;
+    flex-shrink: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+}
+
+.textWrapper {
+  height: 100%;
+  justify-content: space-between;
+  background-color: variables.$yellow;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 30px 25px;
+  gap: 30px;
+
+  & > h3 {
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 1.23;
+    color: #ffffff;
+  }
+
+  & > p {
+    font-size: 16px;
+    line-height: 1.55;
+    font-weight: 300;
+    color: #ffffff;
+
+  }
+
+}
+
+@media screen and (max-width: 1200px) {
+  .repairCard {
+    max-width: 220px;
+
+    & > .img {
+      width: 220px;
+      height: 300px;
+
+    }
+  }
+  .repairsWrapper {
+    gap: 20px;
+  }
+  .textWrapper {
+    padding: 20px;
+
+    h3 {
+      font-size: 24px;
+    }
+
+    p {
+      font-size: 14px;
+    }
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .repairCard {
+    flex-direction: row;
+    max-width: 600px;
+    height: 300px;
+
+    & > .img {
+      width: 300px;
+      height: 300px;
+    }
+  }
+  .repairsWrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+
+  }
+  .textWrapper {
+    justify-content: normal;
+    gap: 15px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .repairCard {
+    align-items: normal;
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+
+    & > .img {
+      max-width: 600px;
+      width: 100%;
+      max-height: 300px;
+    }
+  }
+  .textWrapper {
+    padding: 20px;
+
+    h3 {
+      font-size: 22px;
+    }
+
+    p {
+      font-size: 12px;
+    }
+  }
+}

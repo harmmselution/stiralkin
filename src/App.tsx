@@ -1,35 +1,29 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { HeroSection } from "./sections/HeroSection/HeroSection.tsx";
+import { Header } from "./components/Header/Header.tsx";
+import { menus, sectionsData } from "./data";
+import { InView } from "react-intersection-observer";
+import { SectionWrapper } from "./sections/SectionWrapper/SectionWrapper.tsx";
+import { useState } from "react";
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const [visibleSection, setVisibleSection] = useState(menus[0].code);
+  const setInView = (inView, entry) => {
+    if (inView) {
+      const sectionId = entry.target.getAttribute("id");
+      setVisibleSection(sectionId);
+    }
+  };
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Header visibleSection={visibleSection} />
+      <HeroSection />
+      {sectionsData.map((item) => (
+        <InView key={item.id} as="div" onChange={setInView} threshold={0.1}>
+          {({ ref }) => <SectionWrapper inViewRef={ref} section={item} />}
+        </InView>
+      ))}
     </>
-  )
+  );
 }
 
-export default App
+export default App;

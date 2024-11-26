@@ -1,0 +1,61 @@
+@use "../../assets/styles/variables";
+
+.button {
+  width: 100%;
+  height: 50px;
+  border-radius: 20px;
+  font-weight: 700;
+  background-color: #ff6b40;
+  padding-inline: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  color: variables.$white;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  transition-property: background-color, color, border-color, box-shadow;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+}
+
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: auto;
+}
+
+.animated .btnFlashWrapper {
+  animation-name: flash;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateX(-85px);
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.animated .btnFlash {
+  background: linear-gradient(90deg, rgba(255, 255, 255, .1), rgba(255, 255, 255, .4));
+  width: 45px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 30px;
+  transform: skewX(-45deg)
+}
+
+@keyframes flash {
+  30% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.button:hover {
+  background-color: #000000;
+}

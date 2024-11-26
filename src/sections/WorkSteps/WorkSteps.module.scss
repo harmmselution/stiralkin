@@ -1,0 +1,206 @@
+.workSteps {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding-inline: 20px;
+}
+
+.title {
+  margin-bottom: 105px;
+  font-size: 42px;
+  line-height: 1.23;
+  font-weight: 600;
+  color: #000000;
+}
+
+.stepBlock {
+
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  flex-direction: row-reverse;
+
+}
+
+.stepBlock:nth-child(2n+1) {
+  align-self: start;
+
+}
+
+.stepBlock:nth-child(2n+1) .stepDesc {
+  text-align: right;
+}
+
+.stepBlock:nth-child(2n+1) .stepTitle {
+  text-align: right;
+}
+
+.stepBlock:nth-child(2n+1) .textContent {
+  align-items: end;
+}
+
+.stepBlock:nth-child(2n) {
+  flex-direction: row;
+  align-self: end;
+
+}
+
+.stepBlock:nth-child(2n) .textContent {
+  align-items: start;
+}
+
+.stepBlock:nth-child(2n) .stepDesc {
+  text-align: left;
+}
+
+.stepBlock:nth-child(2n) .stepTitle {
+  text-align: left;
+}
+
+.lineContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  background-color: #222;
+  border-radius: 100%;
+
+  & > p {
+    color: #fff;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.35;
+  }
+}
+
+.line {
+  width: 2px;
+  background: #222;
+  height: 100%;
+}
+
+.textContent {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 327px;
+}
+
+.stepBlock:not(:last-child) .textContent {
+
+  padding-bottom: 30px;
+}
+
+.stepTitle {
+  text-align: start;
+  font-weight: 600;
+  color: #000000;
+  font-size: 24px;
+}
+
+.stepDesc {
+  font-size: 18px;
+  line-height: 1.45;
+  font-weight: 300;
+  color: #000000;
+  text-align: right;
+}
+
+
+.stepBlockWrapper {
+
+  display: flex;
+  flex-direction: column;
+  max-width: 760px;
+  width: 100%;
+}
+
+.text {
+  text-align: center;
+  padding-top: 60px;
+  padding-bottom: 75px;
+  font-size: 32px;
+  line-height: 1.35;
+  font-weight: 300;
+  color: #000000;
+}
+
+@media screen and (max-width: 1200px) {
+  .title {
+    font-size: 38px;
+  }
+  .stepBlockWrapper {
+    max-width: 620px;
+  }
+  .textContent {
+    max-width: 257px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .stepBlockWrapper {
+    max-width: 562px;
+  }
+  .textContent {
+    max-width: 228px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .title {
+    font-size: 30px;
+  }
+  .stepBlockWrapper {
+    width: 100%;
+  }
+  .stepBlock {
+    gap: 20px;
+    flex-direction: row;
+    justify-content: normal;
+  }
+  .textContent {
+    align-items: start;
+    max-width: fit-content;
+    padding-bottom: 30px;
+
+  }
+  .circle {
+
+    & > p {
+      font-size: 16px;
+    }
+  }
+
+  .stepBlock:nth-child(n) {
+    flex-direction: row;
+    align-self: end;
+
+  }
+
+  .stepBlock:nth-child(n) .textContent {
+    align-items: start;
+  }
+
+  .stepBlock:nth-child(n) .stepDesc {
+    text-align: left;
+  }
+
+  .stepBlock:nth-child(n) .stepTitle {
+    text-align: left;
+  }
+  .text {
+    font-size: 22px;
+  }
+}

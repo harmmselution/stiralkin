@@ -1,0 +1,172 @@
+.advantagesWrapper {
+  display: flex;
+  padding-inline: 20px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.advantages {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: white;
+  padding-top: 90px;
+  padding-bottom: 150px;
+}
+
+.title {
+  font-weight: 600;
+  color: #000000;
+  font-size: 42px;
+  line-height: 1.23;
+  margin-bottom: 40px;
+  height: 103px;
+}
+
+.subTitle {
+  font-weight: 300;
+  color: #000000;
+  font-size: 24px;
+  line-height: 1.5;
+  text-align: center;
+  margin-bottom: 105px;
+}
+
+.cardsWrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.card {
+  max-width: 310px;
+  width: 100%;
+  display: flex;
+  align-self: start;
+
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 45px;
+}
+
+
+.cardImg {
+  width: 100px;
+  height: 100px;
+  max-width: 100%;
+  margin-bottom: 30px;
+  object-fit: cover;
+
+}
+
+.cardTitle {
+  font-weight: 600;
+  color: #000000;
+  padding-bottom: 20px;
+  font-size: 24px;
+  line-height: 1.35;
+}
+
+.cardSubTitle {
+  font-weight: 300;
+  color: #000000;
+  font-size: 18px;
+  line-height: 1.55;
+  text-align: center;
+}
+
+.cardDivider {
+  min-height: 266px;
+  width: 1px;
+  background: #d1d1d1;
+}
+
+.divider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20px;
+  margin-right: 20px;
+  width: 100%;
+  max-width: 760px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+
+.opacidDivider {
+  background-image: -webkit-linear-gradient(right, #d1d1d1, rgba(0, 0, 0, 0));
+  max-width: 200px;
+  width: 100%;
+  height: 1px;
+}
+
+.opacidDividerRight {
+  background-image: -webkit-linear-gradient(left, #d1d1d1, rgba(0, 0, 0, 0));
+  max-width: 200px;
+  width: 100%;
+  height: 1px;
+}
+
+.secondDivider {
+  background: #d1d1d1;
+  width: 100%;
+  height: 1px;
+  display: table-cell;
+}
+
+@media screen and (max-width: 1200px) {
+  .card {
+    max-width: 250px;
+    padding: 25px;
+  }
+  .cardTitle {
+    font-size: 22px;
+  }
+  .cardSubTitle {
+    font-size: 16px;
+  }
+  .title {
+    font-size: 38px;
+  }
+  .divider {
+    max-width: 620px;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .cardsWrapper {
+    flex-direction: column;
+  }
+  .cardDivider {
+    min-height: auto;
+    height: 1px;
+    width: 100%;
+  }
+  .cardTitle {
+    padding-bottom: 10px;
+  }
+  .card {
+    width: 100%;
+    max-width: 576px;
+    align-self: center;
+  }
+
+}
+
+@media screen and (max-width: 640px) {
+  .cardSubTitle {
+    font-size: 14px;
+    line-height: 1.45;
+  }
+  .subTitle {
+    font-size: 20px;
+    line-height: 1.4;
+  }
+  .title {
+    font-size: 30px;
+  }
+}
